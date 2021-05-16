@@ -1,0 +1,24 @@
+{
+    "name": "pau/ddd-utilities",
+    "description": "Different utilities focused on the development of php applications using DDD",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "pauhoms",
+            "email": "pauhomsjimenez1@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "DDDUtilities\\": ["src"]
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "DDDUtilities\\Tests\\": ["test"]
+        }
+    }
+}
