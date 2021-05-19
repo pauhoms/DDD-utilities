@@ -6,7 +6,7 @@ namespace DDDUtilities\Domain\ValueObjects;
 use InvalidArgumentException;
 use Ramsey\Uuid\Uuid as RamseyUuid;
 
-class Uuid
+abstract class Uuid
 {
     protected string $value;
 
@@ -33,8 +33,8 @@ class Uuid
         }
     }
 
-    public static function creator(): self
+    protected function newUuid(): string
     {
-        return new self(RamseyUuid::uuid4()->toString());
+        return RamseyUuid::uuid4()->toString();
     }
 }

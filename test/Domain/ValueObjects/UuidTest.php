@@ -3,7 +3,6 @@
 namespace DDDUtilities\Tests\Domain\ValueObjects;
 
 use PHPUnit\Framework\TestCase;
-use DDDUtilities\Domain\ValueObjects\Uuid;
 use InvalidArgumentException;
 
 final class UuidTest extends TestCase
@@ -14,7 +13,7 @@ final class UuidTest extends TestCase
     public function uuidShouldBeInvalid(): void
     {
         $this->expectException(InvalidArgumentException::class);
-        $uuid = new Uuid("invalid");
+        $uuid = new UuidObject("invalid");
     }
 
     /**
@@ -22,7 +21,7 @@ final class UuidTest extends TestCase
      */
     public function uuidShouldBeCreated(): void
     {
-        $uuid = Uuid::creator();
+        $uuid = UuidObject::creator();
         $this->assertNotNull($uuid);
     }
 
@@ -31,7 +30,7 @@ final class UuidTest extends TestCase
      */
     public function uuidShouldBeValid(): void
     {
-        $uuid = new Uuid(Uuid::creator()->value());
+        $uuid = new UuidObject(UuidObject::creator()->value());
 
         $this->assertNotNull($uuid);
     }
